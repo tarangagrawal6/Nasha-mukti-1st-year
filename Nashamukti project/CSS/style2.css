@@ -1,0 +1,22 @@
+body {
+	background-image:url('blue-hexagonal-medical-healthcare-background-design_1017-26836.avif');
+	background-size: cover;
+	background-position: center;
+	overflow: hidden;
+}
+.transparent-box {
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 10px;
+	padding: 20px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.2);
+	
+}
+.contact-heading {
+	font-size: 32px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+.contact-info {
+	font-size: 18px;
+	margin-bottom: 10px;
+}

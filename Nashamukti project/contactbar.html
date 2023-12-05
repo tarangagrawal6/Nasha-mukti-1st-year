@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nasha Mukti Centers</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+          
+        }
+       
+        .container{
+            background-color: black;
+            height: 100vh;
+            width: 50vw;
+            position: relative;
+        }
+
+        h1 {
+            color: #0c176a;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #495057;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        #centers {
+            margin-top: 20px;
+        }
+
+        .center-info {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+
+        .center-info h3 {
+            color: #007bff;
+        }
+
+        .center-info p {
+            margin: 10px 0;
+            color: #495057;
+        }
+
+        .center-name:hover {
+            cursor: pointer;
+            text-decoration: underline;
+            color: #ff4800;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="mt-4">Nasha Mukti Centers</h1>
+
+        <div class="form-group">
+            <label for="stateSelect">Select State:</label>
+            <select id="stateSelect" class="form-control" onchange="showCenters()">
+                <option value="" selected disabled>Select a State</option>
+                <option value="maharashtra">Maharashtra</option>
+                <option value="gujarat">Gujarat</option>
+               <option value="andhra_pradesh">Andhra Pradesh</option>
+                <option value="telangana">Telangana</option>
+                <option value="tamil_nadu">Tamil Nadu</option>
+                <option value="karnataka">Karnataka</option>
+                <option value="kerala">Kerala</option>
+                <option value="madhya_pradesh">Madhya Pradesh</option>
+                <option value="rajasthan">Rajasthan</option>
+                <option value="uttar_pradesh">Uttar Pradesh</option>
+                <option value="bihar">Bihar</option>
+                <option value="west_bengal">West Bengal</option>
+                <option value="odisha">Odisha</option>
+                <option value="assam">Assam</option>
+                <option value="punjab">Punjab</option>
+                <option value="haryana">Haryana</option>
+                <option value="jammu_kashmir">Jammu & Kashmir</option>
+            </select>
+        </div>
+
+        <div id="centers">
+        
+        </div>
+
+        <div id="centerInfo" class="center-info">
+
+        </div>
+    </div>
+
+   
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        function showCenters() {
+            var stateSelect = document.getElementById("stateSelect");
+            var selectedState = stateSelect.options[stateSelect.selectedIndex].value;
+            var centersDiv = document.getElementById("centers");
+
+            
+            centersDiv.innerHTML = "";
+
+
+            if (selectedState === "maharashtra") {
+                showMaharashtraCenters();
+            } else if (selectedState === "gujarat") {
+                showGujaratCenters();
+            } else if (selectedState === "andhra_pradesh") {
+                showAndhraPradeshCenters();
+            } else if (selectedState === "telangana") {
+                showTelanganaCenters();
+            } else if (selectedState === "tamil_nadu") {
+                showTamilNaduCenters();
+            } else if (selectedState === "karnataka") {
+                showKarnatakaCenters();
+            } else if (selectedState === "kerala") {
+                showKeralaCenters();
+            } else if (selectedState === "madhya_pradesh") {
+                showMadhyaPradeshCenters();
+            } else if (selectedState === "rajasthan") {
+                showRajasthanCenters();
+            } else if (selectedState === "uttar_pradesh") {
+                showUttarPradeshCenters();
+            } else if (selectedState === "bihar") {
+                showBiharCenters();
+            } else if (selectedState === "west_bengal") {
+                showWestBengalCenters();
+            } else if (selectedState === "odisha") {
+                showOdishaCenters();
+            } else if (selectedState === "assam") {
+                showAssamCenters();
+            } else if (selectedState === "punjab") {
+                showPunjabCenters();
+            } else if (selectedState === "haryana") {
+                showHaryanaCenters();
+            } else if (selectedState === "jammu_kashmir") {
+                showJammuKashmirCenters();
+            }
+            // Add more conditions for other states
+        }
+
+        function showMaharashtraCenters() {
+            var centersDiv = document.getElementById("centers");
+            centersDiv.innerHTML = "<h2>Nasha Mukti Centers in Maharashtra</h2>" +
+                "<ul>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Mumbai Nasha Mukti Center\")'>Mumbai Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Pune Nasha Mukti Center\")'>Pune Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Amrawati Nasha Mukti Center\")'>Nagpur Nasha Mukti Center</span></li>" +
+                "</ul>";
+        }
+
+        function showGujaratCenters() {
+            var centersDiv = document.getElementById("centers");
+            centersDiv.innerHTML = "<h2>Nasha Mukti Centers in Gujarat</h2>" +
+                "<ul>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Ahmedabad Nasha Mukti Center\")'>Ahmedabad Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Surat Nasha Mukti Center\")'>Surat Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Vadodara Nasha Mukti Center\")'>Vadodara Nasha Mukti Center</span></li>" +
+                "</ul>";
+        }
+        function showAndhraPradeshCenters() {
+            var centersDiv = document.getElementById("centers");
+            centersDiv.innerHTML = "<h2>Nasha Mukti Centers in Andhra Pradesh</h2>" +
+                "<ul>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Vishakhpatnam Nasha Mukti Center\")'>Vishakhpatnam Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Kurnool Nasha Mukti Center\")'>Kurnool Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Kadapa Nasha Mukti Center\")'>Kadapa Nasha Mukti Center</span></li>" +
+                "</ul>";
+        }
+        function showTelanganaCenters() {
+            var centersDiv = document.getElementById("centers");
+            centersDiv.innerHTML = "<h2>Nasha Mukti Centers in Telangana</h2>" +
+                "<ul>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Hyderabad Nasha Mukti Center\")'>Hyderabad Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Bhupalpalli Nasha Mukti Center\")'>Bhupalpalli Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Sangareddy Nasha Mukti Center\")'>Sangareddy Nasha Mukti Center</span></li>" +
+                "</ul>";
+        }
+        function showTamilNaduCenters() {
+            var centersDiv = document.getElementById("centers");
+            centersDiv.innerHTML = "<h2>Nasha Mukti Centers in Tamilnadu</h2>" +
+                "<ul>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Chennai Nasha Mukti Center\")'>Chennai Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Vellore Nasha Mukti Center\")'>Vellore Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Coimbatore Nasha Mukti Center\")'>Coimbatore Nasha Mukti Center</span></li>" +
+                "</ul>";
+        }
+        function showKarnatakaCenters() {
+            var centersDiv = document.getElementById("centers");
+            centersDiv.innerHTML = "<h2>Nasha Mukti Centers in Karnataka</h2>" +
+                "<ul>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Banglore Nasha Mukti Center\")'>Banglore Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Hubballi Nasha Mukti Center\")'>Hubballi Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Kolar Nasha Mukti Center\")'>Kolar Nasha Mukti Center</span></li>" +
+                "</ul>";
+        }
+        function showKerelaCenters() {
+            var centersDiv = document.getElementById("centers");
+            centersDiv.innerHTML = "<h2>Nasha Mukti Centers in Kerela</h2>" +
+                "<ul>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Thiruvananthapuram Nasha Mukti Center\")'>Thiruvananthapuram Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Kozhikode Nasha Mukti Center\")'>Kozhikode Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Kannur Nasha Mukti Center\")'>Kannur Nasha Mukti Center</span></li>" +
+                "</ul>";
+        }
+        function showMadhyaPradeshCenters() {
+            var centersDiv = document.getElementById("centers");
+            centersDiv.innerHTML = "<h2>Nasha Mukti Centers in MadhyaPradesh</h2>" +
+                "<ul>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Bhopal Nasha Mukti Center\")'>Bhopal Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Indore Nasha Mukti Center\")'>Indore Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Jabalpur Nasha Mukti Center\")'>Jabalpur Nasha Mukti Center</span></li>" +
+                "</ul>";
+        }
+        function showRajasthanCenters() {
+            var centersDiv = document.getElementById("centers");
+            centersDiv.innerHTML = "<h2>Nasha Mukti Centers in Rajasthan</h2>" +
+                "<ul>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Ajmer Nasha Mukti Center\")'>Ajmer Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Jaipur Nasha Mukti Center\")'>Jaipur Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Boondi Nasha Mukti Center\")'>Boondi Nasha Mukti Center</span></li>" +
+                "</ul>";
+        }
+        function showUttarPradeshCenters() {
+            var centersDiv = document.getElementById("centers");
+            centersDiv.innerHTML = "<h2>Nasha Mukti Centers in UttarPradesh</h2>" +
+                "<ul>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Lucknow Nasha Mukti Center\")'>Lucknow Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Kanpur Nasha Mukti Center\")'>Kanpur Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Meerut Nasha Mukti Center\")'>Meerut Nasha Mukti Center</span></li>" +
+                "</ul>";
+        }
+        function showBiharCenters() {
+            var centersDiv = document.getElementById("centers");
+            centersDiv.innerHTML = "<h2>Nasha Mukti Centers in Bihar</h2>" +
+                "<ul>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Patna Nasha Mukti Center\")'>Patna Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Darbhanga Nasha Mukti Center\")'>Darbhanga Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Sasaram Nasha Mukti Center\")'>Sasaram Nasha Mukti Center</span></li>" +
+                "</ul>";
+        }
+        function showWestBengalCenters() {
+            var centersDiv = document.getElementById("centers");
+            centersDiv.innerHTML = "<h2>Nasha Mukti Centers in WestBengal</h2>" +
+                "<ul>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Kolkata Nasha Mukti Center\")'>Kolkata Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Shibpur Nasha Mukti Center\")'>Shibpur Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Nadia Nasha Mukti Center\")'>Nadia Nasha Mukti Center</span></li>" +
+                "</ul>";
+        }
+        function showOdishaCenters() {
+            var centersDiv = document.getElementById("centers");
+            centersDiv.innerHTML = "<h2>Nasha Mukti Centers in Odisha</h2>" +
+                "<ul>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Bhubaneshwar Nasha Mukti Center\")'>Bhubaneshwar Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Puri Nasha Mukti Center\")'>Puri Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Rourkela Nasha Mukti Center\")'>Rourkela Nasha Mukti Center</span></li>" +
+                "</ul>";
+        }
+        function showAssamCenters() {
+            var centersDiv = document.getElementById("centers");
+            centersDiv.innerHTML = "<h2>Nasha Mukti Centers in Assam</h2>" +
+                "<ul>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Guwahati Nasha Mukti Center\")'>Guwahati Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Silchar Nasha Mukti Center\")'>Silchar Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Tezpur Nasha Mukti Center\")'>Tezpur Nasha Mukti Center</span></li>" +
+                "</ul>";
+        }
+        function showPunjabCenters() {
+            var centersDiv = document.getElementById("centers");
+            centersDiv.innerHTML = "<h2>Nasha Mukti Centers in Punjab</h2>" +
+                "<ul>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Amritsar Nasha Mukti Center\")'>Amritsar Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Bathida Nasha Mukti Center\")'>Bathida Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Jalandhar Nasha Mukti Center\")'>Jalandhar Nasha Mukti Center</span></li>" +
+                "</ul>";
+        }
+        function showHaryanaCenters() {
+            var centersDiv = document.getElementById("centers");
+            centersDiv.innerHTML = "<h2>Nasha Mukti Centers in Haryana</h2>" +
+                "<ul>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Gurugram Nasha Mukti Center\")'>Gurugram Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Panipat Nasha Mukti Center\")'>Panipat Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Faridabad Nasha Mukti Center\")'>Faridabad Nasha Mukti Center</span></li>" +
+                "</ul>";
+        }
+        function showJammuKashmirCenters() {
+            var centersDiv = document.getElementById("centers");
+            centersDiv.innerHTML = "<h2>Nasha Mukti Centers in Jammu and Kashmir</h2>" +
+                "<ul>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Jammu Nasha Mukti Center\")'>Jammu Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Poonch Nasha Mukti Center\")'>Poonch Nasha Mukti Center</span></li>" +
+                "<li><span class='center-name' onclick='showCenterInfo(\"Srinagar Nasha Mukti Center\")'>Srinagar Nasha Mukti Center</span></li>" +
+                "</ul>";
+        }
+
+        function showCenterInfo(centerName) {
+            var centerInfoDiv = document.getElementById("centerInfo");
+            centerInfoDiv.innerHTML = "<h3>" + centerName + "</h3>" +
+                "<p>Address: NH53, City</p>" +
+                "<p>Contact: +91 1234567890</p>" +
+                "<p>Services: Addiction Treatment, Counseling, Rehabilitation</p>";
+
+            centerInfoDiv.style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

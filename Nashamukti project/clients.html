@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recovering Individuals</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-image: url('imgs/istockphoto-621484894-170667a.webp');
+            /* background: linear-gradient(blue,white); */
+            text-decoration: none;
+        }
+
+        nav {
+            background: #001E2B;
+            position: fixed;
+            top: 0px;
+            right: 0px;
+            text-decoration: none;
+            width: 100%;
+            z-index: 1;
+        }
+
+        label.logo {
+            color: blanchedalmond;
+            font-weight: 40px;
+            font-size: 70px;
+            line-height: 50px;
+        }
+
+        .logo:hover {
+            text-shadow: 0px 0px 10px rgb(255, 255, 255), 0px 0px rgb(255, 255, 255)mond;
+        }
+
+        .logoimage {
+            line-height: 50px;
+        }
+
+        nav ul {
+            float: right;
+        }
+
+        nav ul li {
+            display: inline-block;
+            line-height: 50px;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: rgb(255, 255, 255);
+            font-weight: 80px;
+            font-size: 14px;
+            text-transform: uppercase;
+            padding: 7px 13px;
+            border-radius: 3px;
+            text-decoration: none;
+        }
+
+        .active a {
+            background: rgb(255, 255, 255);
+            color: #001E2B;
+            transition: .5s;
+        }
+
+        a:hover {
+            background: rgb(255, 255, 255);
+            color: #001E2B;
+            transition: .5s;
+        }
+
+        h1 {
+            color: black;
+            text-align: center;
+            font-weight: bolder;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            /* text-decoration: underline; */
+            position: relative;
+            top:30px;
+            font-size: 40px;
+            font-family: sans-serif;
+        }
+
+        #victims-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .victim {
+            margin-top: 60px;
+            width: 300px;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid black;
+            border-radius: 8px;
+            background-image: linear-gradient(60deg, rgb(180, 170, 239) 14%, rgb(253, 254, 254) 57%, rgb(221, 222, 236) 89%);
+
+
+            backdrop-filter: blur(100px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .victim:hover {
+            width: 300px;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid black;
+            border-radius: 8px;
+            background-color: transparent;
+            backdrop-filter: blur(100px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+
+
+        }
+
+        .job {
+            display: flex;
+            flex-direction: row;
+            position: relative;
+        }
+
+        .i1 {
+            flex: 1;
+            width: 250px;
+            height: 250px;
+
+        }
+
+        .in {
+
+            position: relative;
+            height: 250px;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+
+        }
+
+        .i1:hover .in {
+            transform: rotateY(180deg);
+        }
+
+        .body_1 {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            backface-visibility: hidden;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+
+
+        .front img {
+            width: 100%;
+            height: 250px;
+            border-radius: 8px;
+        }
+
+        .back {
+            background-image: linear-gradient(60deg, rgb(0, 128, 255) 14%, rgb(181, 195, 246) 57%, rgb(196, 189, 189) 89%);
+            transform: rotateY(180deg);
+        }
+
+        .i .victim img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .name {
+            color: black;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .age {
+            color:black;
+            font-weight: bolder;
+            margin-bottom: 8px;
+        }
+
+        .recovery-status {
+            color: rgb(244, 37, 18);
+           font-weight: bolder;
+            margin-bottom: 12px;
+        }
+
+        .description {
+            font-weight: bolder;
+            color:black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Previous Clients of Nasha Mukti</h1>
+
+    <ul id="victims-list"></ul>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Updated sample data with additional victims
+            const victimsData = [
+                { name: "Sarah Johnson", age: 32, recoveryStatus: "Successfully Recovered", description: "Sarah successfully completed the de-addiction program and is now leading a healthy, drug-free life." },
+                { name: "Michael Williams", age: 45, recoveryStatus: "In Recovery", description: "Michael is currently in the recovery phase, making positive progress in overcoming addiction." },
+                { name: "Emily Davis", age: 28, recoveryStatus: "Successfully Recovered", description: "Emily has overcome addiction and is now an advocate for addiction awareness and recovery." },
+                { name: "David Thompson", age: 38, recoveryStatus: "In Recovery", description: "David is actively participating in the recovery program and is determined to make positive changes in his life." },
+                { name: "Sophia Martinez", age: 25, recoveryStatus: "Successfully Recovered", description: "Sophia has successfully completed the de-addiction program and is pursuing her career goals." },
+                { name: "Daniel White", age: 40, recoveryStatus: "In Recovery", description: "Daniel is in the early stages of recovery, attending counseling sessions and support groups." },
+                { name: "Daniel White", age: 40, recoveryStatus: "In Recovery", description: "Daniel is in the early stages of recovery, attending counseling sessions and support groups." },
+                { name: "Daniel White", age: 40, recoveryStatus: "In Recovery", description: "Daniel is in the early stages of recovery, attending counseling sessions and support groups." },
+                { name: "Daniel White", age: 40, recoveryStatus: "In Recovery", description: "Daniel is in the early stages of recovery, attending counseling sessions and support groups." },
+                { name: "Daniel White", age: 40, recoveryStatus: "In Recovery", description: "Daniel is in the early stages of recovery, attending counseling sessions and support groups." },
+                { name: "Daniel White", age: 40, recoveryStatus: "In Recovery", description: "Daniel is in the early stages of recovery, attending counseling sessions and support groups." },
+                { name: "Daniel White", age: 40, recoveryStatus: "In Recovery", description: "Daniel is in the early stages of recovery, attending counseling sessions and support groups." },
+                // Add more victims as needed
+            ];
+
+            function createListItem(data, listId) {
+                const list = document.getElementById(listId);
+                data.forEach(victim => {
+                    const listItem = document.createElement("li");
+                    listItem.classList.add("victim");
+                    listItem.innerHTML = `
+          <div class="job">
+            <div class="i1">
+              <div class="in">
+              <div class="body_1 front">
+              <p class="name">${victim.name}</p>
+              </div>
+              <div class="body_1 back">
+              <p class="age">Age: ${victim.age}</p>
+              <p class="recovery-status">${victim.recoveryStatus}</p>
+              <p class="description">${victim.description}</p>
+              </div>
+              </div>
+            </div>
+          </div>  
+          `;
+                    list.appendChild(listItem);
+                });
+            }
+
+            createListItem(victimsData, "victims-list");
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nasha Mukti Kendra Services</title>
+  <link rel="icon" type="image" href="letter-n-logo-circle-shape-260nw-610262093.jpg">
+  </link>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.6.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background-color: rgb(51, 67, 97);
+    }
+
+    .nav {
+      width: 100%;
+      text-align: center;
+    }
+
+    .services-container {
+      max-width: 800px;
+      margin: 0px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-image: url(Screenshot\ 2023-12-03\ 181328.png);
+      background-size: cover;
+    }
+
+    .service {
+      margin-top: 0.3vw;
+      padding: 15px;
+      border: 1px solid #f5f2f2;
+      border-radius: 5px;
+    }
+
+    h1 {
+      color: rgb(223, 220, 220)
+    }
+::-webkit-scrollbar{
+  display: none;
+}
+
+    h2 {
+      color: rgb(231, 228, 228)
+    }
+
+    p {
+      color: #bdbbbb;
+    }
+
+    a {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .treatments {
+      min-width: 5vw;
+
+      position: absolute;
+      top: 36%;
+      left: 47%;
+      padding: 0 1vw;
+      visibility: hidden;
+      height: 0;
+      background-color: rgb(227, 223, 223);
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+
+    }
+
+    .treatments a {
+      font-size: 1vw;
+      border-bottom: 2px solid;
+      text-align: center;
+      text-decoration: none;
+      margin-top: 1vw;
+      display: block;
+
+
+    }
+
+    .color {
+      background-color: pink;
+      display: inline;
+    }
+
+    i {
+      cursor: pointer;
+    }
+
+    .h1 {
+      position: relative;
+      left: 35vw;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="h1"></h1>
+
+  <div class="services-container">
+    <div class="treatments">
+      <a href="https://www.nashamuktikendra.org.in/cocaine-addiction-treatment">Cocaine Addiction Treatment</a>
+      <a href="https://www.nashamuktikendra.org.in/alcohol-rehabilitation-centre">Alcohol Rehibination Center</a>
+      <a href="https://www.nashamuktikendra.org.in/detoxification-treatment">Detoxification Treatment</a>
+    </div>
+    <div class="nav">
+      <h1>Nasha Mukti Kendra</h1>
+      <h2>Services <i class="ri-menu-line" id="servicetreat"></i></h2>
+
+    </div>
+    <div class="service">
+      <h2><a href="link_to_individual_counseling">Individual Counseling</a></h2>
+      <p>Personalized counseling sessions with experienced professionals to address individual needs and challenges.</p>
+    </div>
+
+    <div class="service">
+      <h2><a href="link_to_group_therapy">Group Therapy</a></h2>
+      <p>Participate in supportive group sessions to share experiences, gain insights, and build a strong support
+        network.</p>
+    </div>
+
+    <div class="service">
+      <h2><a href="link_to_medical_supervision">Medical Supervision</a></h2>
+      <p>24/7 medical care and supervision to ensure the well-being of individuals undergoing the de-addiction process.
+      </p>
+    </div>
+
+    <div class="service">
+      <h2><a href="link_to_rehabilitation_programs">Rehabilitation Programs</a></h2>
+      <p>Structured rehabilitation programs designed to promote physical, mental, and emotional recovery.</p>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+    integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+
+    const servicetreatment = document.getElementById('servicetreat')
+
+    const treatments = document.querySelector(".treatments")
+
+    servicetreatment.addEventListener('click', function () {
+      if (treatments.style.visibility === 'hidden')
+        gsap.to('.treatments', {
+          height: 130 + 'px',
+          visibility: 'visible',
+          duration: 1,
+        })
+      else {
+        console.log('ashutosh');
+        treatments.style.visibility = 'hidden'
+      }
+    })
+
+
+    let idset = setInterval(update, 100)
+    let a = ["Welcome to Services Page"];
+    let nameI = 0;
+    let charIndex = 0
+    function update() {
+      charIndex++;
+
+      document.querySelector('h1').innerHTML = a[nameI].slice(0, charIndex);
+      if (charIndex == a[nameI].length) {
+        charIndex = 0;
+        nameI++;
+      }
+      if (nameI == a.length) {
+        clearInterval(idset);
+      }
+
+    }
+
+
+  </script>
+</body>
+
+</html>
